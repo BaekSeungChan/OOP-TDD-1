@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.delivery'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.passay:passay:1.6.1'  // 해당 의존성을 추가해 준 이유는 테스트하기 쉬운 코드를 작성하다 보면 더 낮은 결합도를 가진 설계를 언ㄷ을 수 있기 때문에 상황을 만들기 위해 추가함
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation("org.assertj:assertj-core:3.24.2")
+}
+
+test {
+    useJUnitPlatform()
+}
